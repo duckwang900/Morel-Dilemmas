@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// also contains code on interacting with interactables
 public class TopDownMovement : MonoBehaviour
 {
     public float moveSpeed;
@@ -47,6 +48,12 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
+    private void Interacting(GameObject interactedObj)
+    {
+        interactedObj.GetComponent<IInteractable>().OnInteract();
+    }
+
+
     public GameObject CheckRaycast()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, currDirection, 64f, layerMask);
@@ -55,11 +62,6 @@ public class TopDownMovement : MonoBehaviour
             return hit.collider.gameObject;
         }
         return null;
-    }
-
-    private void Interacting(GameObject interactedObj)
-    {
-        interactedObj.GetComponent<IInteractable>().OnInteract();
     }
 
     private void FixedUpdate()
