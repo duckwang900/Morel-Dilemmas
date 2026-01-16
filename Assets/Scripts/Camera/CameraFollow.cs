@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         
         smoothedPosition.x = Mathf.Round(smoothedPosition.x * pixelPerUnit) / pixelPerUnit;
-        smoothedPosition.y = Mathf.Round(smoothedPosition.y * pixelPerUnit) / pixelPerUnit;
-        transform.position = new Vector3(smoothedPosition.x, smoothedPosition.y, transform.position.z);
+        //smoothedPosition.y = Mathf.Round(smoothedPosition.y * pixelPerUnit) / pixelPerUnit;
+        transform.position = new Vector3(smoothedPosition.x, transform.position.y, transform.position.z);
     }
 }
