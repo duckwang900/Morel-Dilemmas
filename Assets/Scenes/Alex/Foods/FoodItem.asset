@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787f44f035f653f4b90a9056f15a7abd, type: 3}
+  m_Name: FoodItem
+  m_EditorClassIdentifier: 
+  itemName: TestFoodItem
+  itemDescription: Test Test Test
+  defaultSprite: {fileID: 6658670927973994472, guid: 018fe2879aac2b542adc3075fa679245, type: 3}
+  SingleIngredientRecipes:
+  - name: Minecraft Block
+    tag: 04000000
+    itemSprite: {fileID: -9111711338455145844, guid: 0c2accf9248bbac479bfec903f06ac08, type: 3}
+  recipe:
+    foodList:
+    - tag: 02000000
+      foodItem: {fileID: 11400000, guid: cc0291dffb54e4f42b21eeafc9d75d71, type: 2}
+    - tag: 02000000
+      foodItem: {fileID: 11400000, guid: cc0291dffb54e4f42b21eeafc9d75d71, type: 2}
+    - tag: 02000000
+      foodItem: {fileID: 11400000, guid: cc0291dffb54e4f42b21eeafc9d75d71, type: 2}
+    step: 6
