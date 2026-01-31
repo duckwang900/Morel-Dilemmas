@@ -83,9 +83,12 @@ public class EzyMeshSlicer : MonoBehaviour
                     outlinePoints
                 );
                 foreach(var mesh in selectedMeshes){
-                    mesh.transform.DOMove(mesh.transform.position + -transform.up*2, 0.5f).OnComplete(()=>
+                    mesh.transform.DOMove(mesh.transform.position + (mesh.transform.position-mesh.transform.parent.position)*3, .25f).OnComplete(()=>
                     {
-                        mesh.gameObject.SetActive(false);
+                        mesh.transform.DOMove(transform.position -transform.up, 0.5f).OnComplete(()=>
+                        {
+                            mesh.gameObject.SetActive(false);
+                        });
                     });
                 }
                 outlinePoints.Clear();
