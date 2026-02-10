@@ -67,5 +67,7 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "On-Shrooms.slnx"
+    "dotnet.defaultSolution": "Eugene-branch.slnx",
+    "dotnet.autoInsert.enableAutoInsert": false,
+    "typescript.tsserver.web.projectWideIntellisense.enabled": false
 }
