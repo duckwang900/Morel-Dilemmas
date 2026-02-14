@@ -8,6 +8,7 @@ public class OrderManager : MonoBehaviour
     public FoodItem[] currentOrders = new FoodItem[5]; // hardcoded at 5 rn - can be changed if needed
 
     public event Action OnHeldOrderChanged;
+    public event Action OnOrdersChanged;
     private int heldOrderIndex;
 
     public void Start()
@@ -18,11 +19,13 @@ public class OrderManager : MonoBehaviour
     public void AddOrder(int tableNum, FoodItem recipe)
     {
         currentOrders[tableNum] = recipe;
+        OnOrdersChanged?.Invoke();
     }
 
     public void RemoveOrder(int tableNum)
     {
         currentOrders[tableNum] = null;
+        OnOrdersChanged?.Invoke();
     }
 
     public void SetHeldOrder(int heldOrderIndex)
@@ -53,6 +56,11 @@ public class OrderManager : MonoBehaviour
         return currentOrders[heldOrderIndex];
     }
 
+    public FoodItem[] GetCurrentOrders()
+    {
+        return currentOrders;
+    }
+
     public bool OrderDelivery(int tableNum)
     {
         if (heldOrderIndex == -1 || currentOrders[tableNum] == null || currentOrders[heldOrderIndex] == null)
@@ -62,6 +70,7 @@ public class OrderManager : MonoBehaviour
         if (currentOrders[tableNum].itemName == currentOrders[heldOrderIndex].itemName)   // so that if they order similar dishes can be interchangeable
         {
             //TODO: reputation and money calculation
+            RemoveOrder(tableNum);
             RemoveHeldOrder();
             currentOrders[tableNum] = null;
             GameManager.Instance.customerManager.RemoveCustomer(tableNum);

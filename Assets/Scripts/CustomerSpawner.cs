@@ -43,7 +43,7 @@ public class CustomerSpawner : MonoBehaviour
     public void SpawnCustomer(CustomerType customerType, int tableNum, bool takenOrder)
     {
         GameObject toSpawnCustomer = GameManager.Instance.customerManager.GetGameObjectFromCustomerType(customerType);
-        GameObject spawnedCustomer = Instantiate(toSpawnCustomer, tables[tableNum].transform.position, Quaternion.identity);
+        GameObject spawnedCustomer = Instantiate(toSpawnCustomer, tables[tableNum].transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
         spawnedCustomer.GetComponent<Customer>().SetTableNum(tableNum);
         spawnedCustomers[tableNum] = spawnedCustomer;
         GameManager.Instance.customerManager.AddCustomer(customerType, tableNum, takenOrder);
@@ -65,5 +65,10 @@ public class CustomerSpawner : MonoBehaviour
                 SpawnCustomer(customerInfo.customerType, customerInfo.tableNum, customerInfo.takenOrder);
             }
         }
+    }
+
+    public GameObject[] GetTables()
+    {
+        return tables;
     }
 }

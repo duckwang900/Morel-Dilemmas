@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7157234310297376903}
   - component: {fileID: 7336168105118143426}
   - component: {fileID: 2443040398768430999}
+  - component: {fileID: 1468230531480138101}
   m_Layer: 0
   m_Name: Ted Top-Down
   m_TagString: Player
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 136170661, guid: 9733c05bea6585f46b25242d17bf1134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6212114601502855824}
-  moveSpeed: 5
+  moveSpeed: 7
   isMoving: 0
   currDirection: {x: 0, y: 0, z: 0}
   layerMask:
@@ -210,6 +211,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1468230531480138101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798307731040782583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba43a35f4b449924fbf630d1c42a946b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6212114601502855824}
 --- !u!1 &1992163767312127697
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +266,7 @@ GameObject:
   - component: {fileID: 5828881211638613544}
   - component: {fileID: 7708066513424171884}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +417,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

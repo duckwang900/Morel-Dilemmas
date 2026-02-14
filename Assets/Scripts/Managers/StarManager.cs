@@ -15,7 +15,10 @@ public class StarManager : MonoBehaviour
     public void IncreaseStarValue(float value)
     {
         starValue += value;
-        Debug.Log("stored star value: " + starValue);
+        if (starValue > 5)
+        {
+            starValue = 5;
+        }
         OnStarValueChanged?.Invoke();
     }
 
